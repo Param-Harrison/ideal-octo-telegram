@@ -1,0 +1,160 @@
+{
+  "eval_set_id": "evalset01a993",
+  "name": "evalset01a993",
+  "eval_cases": [
+    {
+      "eval_id": "case8c77fa",
+      "conversation": [
+        {
+          "invocation_id": "e-56b95f3d-92ce-4fd4-8aee-afee7ae2f37c",
+          "user_content": {
+            "parts": [
+              {
+                "text": "jobbatical immigration product"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "```json\n{\n  \"company_website\": \"https://www.jobbatical.com/\",\n  \"social_profile_links\": {\n    \"linkedin\": \"https://twitter.com/jobbatical/\",\n    \"twitter\": \"https://twitter.com/jobbatical/\"\n  },\n  \"company_ceo\": \"Taavi Simson\",\n  \"company_summary\": \"Jobbatical is a platform focused on helping companies relocate employees by automating and simplifying the immigration process. They offer a tech-enabled immigration service to make international relocation easier for both companies and their employees. They aim to streamline the complexities of global mobility.\"\n}\n```"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "website_finder_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "tool_search_company_website_6U1vNEKqnR4bKl22HEWV",
+                        "args": {
+                          "company_name": "jobbatical immigration product"
+                        },
+                        "name": "search_company_website"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "website_finder_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "tool_search_company_website_6U1vNEKqnR4bKl22HEWV",
+                        "name": "search_company_website",
+                        "response": {
+                          "result": "https://www.jobbatical.com/, https://ee.linkedin.com/company/jobbatical, https://techcrunch.com/2019/12/11/refocusing-on-relocation-jobbatical-launches-new-offices-in-spain-and-germany/, https://startup.jobs/company/jobbatical, https://www.ica.gov.sg/"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "social_linkedin_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "tool_search_social_platform_4Q4SFEosPQPXiBMW54DM",
+                        "args": {
+                          "company_name": "jobbatical",
+                          "website": "https://www.jobbatical.com/",
+                          "platform": "linkedin"
+                        },
+                        "name": "search_social_platform"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "social_linkedin_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "tool_search_social_platform_4Q4SFEosPQPXiBMW54DM",
+                        "name": "search_social_platform",
+                        "response": {
+                          "result": [
+                            "https://ee.linkedin.com/company/jobbatical",
+                            "https://az.linkedin.com/company/jobbatical-com"
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "social_twitter_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "tool_search_social_platform_iqxH3Go6TXLbFGSqZ08e",
+                        "args": {
+                          "platform": "twitter",
+                          "company_name": "jobbatical",
+                          "website": "https://www.jobbatical.com/"
+                        },
+                        "name": "search_social_platform"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "social_twitter_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "tool_search_social_platform_iqxH3Go6TXLbFGSqZ08e",
+                        "name": "search_social_platform",
+                        "response": {
+                          "result": [
+                            "https://twitter.com/jobbatical/"
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764860219.888028
+        }
+      ],
+      "session_input": {
+        "app_name": "data_enrichment_agent",
+        "user_id": "user",
+        "state": {
+          "website_url": "",
+          "social_linkedin_url": "",
+          "social_twitter_url": "",
+          "social_links": "",
+          "ceo_info": "",
+          "company_summary": ""
+        }
+      },
+      "creation_timestamp": 1764860338.2210271
+    }
+  ],
+  "creation_timestamp": 1764860332.716877
+}
