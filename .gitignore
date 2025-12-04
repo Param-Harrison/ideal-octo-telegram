@@ -14,3 +14,8 @@ wheels/
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Google ADK files
+.adk/
+*.evalset.json
+*.session.db
